@@ -21,6 +21,7 @@ import os
 import json
 import subprocess
 import collections
+import io
 
 def get_uptime():
 	f = open('/proc/uptime', 'r')
@@ -54,6 +55,25 @@ def get_hdd():
 	used = total.split()[3]
 	size = total.split()[2]
 	return int(size), int(used)
+
+def get_custom_msg():
+	file_path = "customMsg.txt"
+	if not os.path.exists(file_path):
+		open(file_path, 'w').close()                    #文件不存在则创建
+	try:
+		custom_file = io.open(file_path, "r", encoding="utf-8")   #用io.open设置encoding来兼容python2和python3
+		custom_file.readlines()                         #读取一行测试能否成功，失败则以windows的gbk编码读取                             
+	except:
+		custom_file = io.open(file_path, "r", encoding="gbk")
+
+	result = ""  
+	for line in custom_file.readlines():                #依次读取每行  
+	    line = line.strip()                             #去掉每行头尾空白  
+	    if not len(line):                               #判断是否是空行
+	        continue                                    #是的话，跳过不处理  
+	    result += (line + " ")                            
+	custom_file.close()
+	return result
 
 def get_time():
 	stat_file = file("/proc/stat", "r")
@@ -195,6 +215,7 @@ if __name__ == '__main__':
 				NET_IN, NET_OUT = liuliang()
 				Uptime = get_uptime()
 				Load_1, Load_5, Load_15 = os.getloadavg()
+				CustomMsg = get_custom_msg()
 				MemoryTotal, MemoryUsed, SwapTotal, SwapFree = get_memory()
 				HDDTotal, HDDUsed = get_hdd()
 				IP_STATUS = ip_status()
@@ -206,6 +227,7 @@ if __name__ == '__main__':
 				else:
 					timer -= 1*INTERVAL
 
+				array['custom'] = CustomMsg
 				array['uptime'] = Uptime
 				array['load_1'] = Load_1
 				array['load_5'] = Load_5
