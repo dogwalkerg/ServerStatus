@@ -1,4 +1,4 @@
-body { background: #ebebeb url('../img/light.png'); }
+body { font-family:Molengo,"Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; background: #ebebeb url('../img/light.png'); }
 .navbar { min-height: 40px; }
 .navbar-brand { color: #fff; padding: 10px; font-size: 20px; }
 .dropdown .dropdown-toggle { padding-bottom: 10px; padding-top: 10px; }
