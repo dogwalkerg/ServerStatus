@@ -62,10 +62,10 @@ bash status.sh client
 ## 使用说明
 进入下载脚本的目录并运行脚本：
 ``` jboss-cli
-# 客户端管理菜单
-./status.sh c
 # 服务端管理菜单
-./status.sh s
+./status.sh server
+# 客户端管理菜单
+./status.sh client
 ```
 然后选择你要执行的选项即可。
 ``` markdown
