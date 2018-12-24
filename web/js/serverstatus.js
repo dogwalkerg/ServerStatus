@@ -136,10 +136,10 @@ function uptime() {
 			// Ipstatus
 			if (result.servers[i].ip_status) {
 				TableRow.children["ip_status"].children[0].children[0].className = "progress-bar progress-bar-success";
-				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>MH361</small>";
+				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>OnLine</small>";
 			} else {
 				TableRow.children["ip_status"].children[0].children[0].className = "progress-bar progress-bar-danger";
-				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>MH370</small>";
+				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>OffLine</small>";
 			}
 
 			// Name
