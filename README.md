@@ -1,7 +1,9 @@
 # ServerStatus中文版：   
 
 * ServerStatus中文版是一个酷炫高逼格的云探针、云监控、服务器云监控、多服务器探针~。
-* 在线演示：https://tz.cloudcpp.com    
+* 在线演示：https://status.7colorblog.com   
+* 本人博客：https://www.7colorblog.com  
+* 七彩杂铺货：https://faka.7colorblog.com  
 
 # 目录介绍：
 
@@ -11,6 +13,7 @@
 
 # 更新说明：
 
+* 20181224, 将软件仓库全部整合为本人仓库,并加以细节修改
 * 20180314, 调整前端，置默认密码为: USER_DEFAULT_PASSWORD，设置ip和user即可上线　　　　　　
 * 20180312, 加入失联(被照顾)检测【正常：MH361, 屏蔽：MH370】，校准虚拟化(container)流量统计异常　　　　　　
 * 20170807, 更新平均1，5，15负载
